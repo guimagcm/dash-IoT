@@ -68,17 +68,17 @@ function onMessageArrived(message) {
   // Input channels Choice 
   var reading;
   switch(message.destinationName) {
-	case "dash/canal1":
+	case "dash/canal7":
 		reading = message.payloadString;
 		document.getElementById('canal1').value = reading;
 		document.getElementById('Medida1').innerText = reading;
     break;
-	case "dash/canal2":
+	case "dash/canal8":
 		reading = message.payloadString;
 		document.getElementById('canal2').value = reading;
 		document.getElementById('Medida2').innerText = reading;
     break;
-	case "dash/canal3":
+	case "dash/canal9":
 		reading = message.payloadString;
 		document.getElementById('canal3').value = reading;
 		document.getElementById('Medida3').innerText = reading;
@@ -95,11 +95,11 @@ function ch4() {
   // If the checkbox is checked, display the output text
   if (checkBox.checked == false){
 		message = new Paho.MQTT.Message("0");
-		message.destinationName = "dash/canal4";
+		message.destinationName = "dash/canal10";
 		client.send(message);
   } else {
 	  	message = new Paho.MQTT.Message("1");
-		message.destinationName = "dash/canal4";
+		message.destinationName = "dash/canal10";
 		client.send(message);
   }
 }
@@ -110,11 +110,11 @@ function ch5() {
   // If the checkbox is checked, display the output text
   if (checkBox.checked == false){
 		message = new Paho.MQTT.Message("0");
-		message.destinationName = "dash/canal5";
+		message.destinationName = "dash/canal11";
 		client.send(message);
   } else {
 	  	message = new Paho.MQTT.Message("1");
-		message.destinationName = "dash/canal5";
+		message.destinationName = "dash/canal11";
 		client.send(message);
     
   }
@@ -126,11 +126,11 @@ function ch6() {
   // If the checkbox is checked, display the output text
   if (checkBox.checked == false){
 		message = new Paho.MQTT.Message("0");
-		message.destinationName = "dash/canal6";
+		message.destinationName = "dash/canal12";
 		client.send(message);
   } else {
 	  	message = new Paho.MQTT.Message("1");
-		message.destinationName = "dash/canal6";
+		message.destinationName = "dash/canal12";
 		client.send(message);
     
   }
