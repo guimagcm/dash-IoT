@@ -15,6 +15,11 @@
 
 </head>
 <body>
+    <div class="containerForm">
+        <form>
+            <input type="button" value="Simulate">
+        </form>
+    </div>
     <div class="containerSensores">
         <form action="/action_page.php">
           <div id="SensorA" class="sensores" onload="showValue()"></div> 
@@ -92,6 +97,18 @@
 	function retorno() {
 	window.location.href = "./";
 	}
+    const button = document.querySelector('input');
+    button.addEventListener('click', updateButton);
+
+    function updateButton() {
+        if (button.value === 'Simulate') {
+            button.value = 'Stop';
+            simulateInputs();
+        } else {
+            button.value = 'Simulate';
+            clearInterval(intervalHandler);
+        }
+    }
 </script>
 
 </html>
