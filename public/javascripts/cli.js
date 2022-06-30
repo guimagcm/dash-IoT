@@ -42,7 +42,7 @@ function simulateInputs() {
 
     return (Math.floor(Math.random()*(max - min + 1)) + min)/100;
   }
-  chanList = ['dash/canal1','dash/canal2','dash/canal3']
+  chanList = ['dash/canal1','dash/canal2','dash/canal3','dash/canal7','dash/canal8','dash/canal9']
   var intervalHandler = setInterval(function () {
     for (let t of chanList){
       message = new Paho.MQTT.Message(String(rdm(0,100)));
@@ -68,20 +68,35 @@ function onMessageArrived(message) {
   // Input channels Choice 
   var reading;
   switch(message.destinationName) {
-	case "dash/canal7":
-		reading = message.payloadString;
-		document.getElementById('canal1').value = reading;
-		document.getElementById('Medida1').innerText = reading;
+  	case "dash/canal1":
+      reading = message.payloadString;
+      document.getElementById('canal1').value = reading;
+      document.getElementById('Medida1').innerText = reading;
     break;
-	case "dash/canal8":
-		reading = message.payloadString;
-		document.getElementById('canal2').value = reading;
-		document.getElementById('Medida2').innerText = reading;
+	  case "dash/canal2":
+      reading = message.payloadString;
+      document.getElementById('canal2').value = reading;
+      document.getElementById('Medida2').innerText = reading;
     break;
-	case "dash/canal9":
-		reading = message.payloadString;
-		document.getElementById('canal3').value = reading;
-		document.getElementById('Medida3').innerText = reading;
+	  case "dash/canal3":
+      reading = message.payloadString;
+      document.getElementById('canal3').value = reading;
+      document.getElementById('Medida3').innerText = reading;
+    break;
+	  case "dash/canal7":
+      reading = message.payloadString;
+      document.getElementById('canal1').value = reading;
+      document.getElementById('Medida1').innerText = reading;
+    break;
+	  case "dash/canal8":
+      reading = message.payloadString;
+      document.getElementById('canal2').value = reading;
+      document.getElementById('Medida2').innerText = reading;
+    break;
+	  case "dash/canal9":
+      reading = message.payloadString;
+      document.getElementById('canal3').value = reading;
+      document.getElementById('Medida3').innerText = reading;
     break;
 	default:
 		// code block
