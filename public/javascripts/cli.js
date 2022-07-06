@@ -110,11 +110,11 @@ function ch4() {
   // If the checkbox is checked, display the output text
   if (checkBox.checked == false){
 		message = new Paho.MQTT.Message("0");
-		message.destinationName = "dash/canal10";
+		message.destinationName = "dash/canal4";
 		client.send(message);
   } else {
 	  	message = new Paho.MQTT.Message("1");
-		message.destinationName = "dash/canal10";
+		message.destinationName = "dash/canal4";
 		client.send(message);
   }
 }
@@ -125,11 +125,11 @@ function ch5() {
   // If the checkbox is checked, display the output text
   if (checkBox.checked == false){
 		message = new Paho.MQTT.Message("0");
-		message.destinationName = "dash/canal11";
+		message.destinationName = "dash/canal5";
 		client.send(message);
   } else {
 	  	message = new Paho.MQTT.Message("1");
-		message.destinationName = "dash/canal11";
+		message.destinationName = "dash/canal5";
 		client.send(message);
     
   }
@@ -141,11 +141,11 @@ function ch6() {
   // If the checkbox is checked, display the output text
   if (checkBox.checked == false){
 		message = new Paho.MQTT.Message("0");
-		message.destinationName = "dash/canal12";
+		message.destinationName = "dash/canal6";
 		client.send(message);
   } else {
 	  	message = new Paho.MQTT.Message("1");
-		message.destinationName = "dash/canal12";
+		message.destinationName = "dash/canal6";
 		client.send(message);
     
   }
